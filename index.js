@@ -70,6 +70,7 @@ function getName(nameStr,idNum,emailStr) {
   return `Hello, my name is ${nameObject.name}`
 }
 console.log(getName('Brian',7,'b@w.com'));
+
 /**
  * ### Challenge `makeSmartPerson`
  * 
@@ -83,9 +84,18 @@ console.log(getName('Brian',7,'b@w.com'));
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
-  /* code here */
+function makeSmartPerson(nameStr) {
+  return {
+    name: nameStr,
+    sum: function(num1, num2){
+      return num1 + num2;
+    },
+    speak: function(){
+      return `Hello, my name is ${this.name}`
+    }
+  }
 }
+console.log(makeSmartPerson('Brian'));
 
 
 
@@ -146,7 +156,7 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  return 'This car is a ' + inventory[index].car_make + inventory[index].car_model;
 }
 
 /**
