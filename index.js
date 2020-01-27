@@ -39,9 +39,14 @@ function addNumbers(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(idNum,nameStr,emailStr) {
+  return {
+  id: idNum,
+  name: nameStr,
+  email: emailStr
+  }
 }
+
 
 /**
  * ### Challenge `getName`
@@ -59,7 +64,6 @@ function makePersonObject(/* code here */) {
 function getName(/* code here */) {
   /* code here */
 }
-
 /**
  * ### Challenge `makeSmartPerson`
  * 
