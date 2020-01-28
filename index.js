@@ -39,9 +39,14 @@ function addNumbers(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(idNum,nameStr,emailStr) {
+  return {
+  id: idNum,
+  name: nameStr,
+  email: emailStr
+  }
 }
+
 
 /**
  * ### Challenge `getName`
@@ -56,9 +61,15 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(nameStr,idNum,emailStr) {
+  let nameObject = {
+    name: nameStr,
+    id: idNum,
+    email: emailStr
+  }
+  return `Hello, my name is ${nameObject.name}`
 }
+console.log(getName('Brian',7,'b@w.com'));
 
 /**
  * ### Challenge `makeSmartPerson`
@@ -73,9 +84,18 @@ function getName(/* code here */) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
-  /* code here */
+function makeSmartPerson(nameStr) {
+  return {
+    name: nameStr,
+    sum: function(num1, num2){
+      return num1 + num2;
+    },
+    speak: function(){
+      return `Hello, my name is ${this.name}`
+    }
+  }
 }
+console.log(makeSmartPerson('Brian'));
 
 
 
@@ -136,7 +156,7 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  return 'This car is a ' + inventory[index].car_make + inventory[index].car_model;
 }
 
 /**
@@ -150,9 +170,11 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventory) {
+  let lastCar = inventory[inventory.length - 1];
+  return 'This is a ' + lastCar.car_make + lastCar.car_model;
 }
+console.log(getLastCarInfo(inventory));
 
 /**
  * ### Challenge `getCarInfoById`
